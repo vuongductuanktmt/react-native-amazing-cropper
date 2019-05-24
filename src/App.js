@@ -3,23 +3,31 @@ import PropTypes from 'prop-types';
 import Cropper from './pages/Cropper.page';
 import DefaultFooter from './components/Footer/DefaultFooter.component';
 
-const App = (props) => (
-  <Cropper
-    footerComponent={props.footerComponent}
-    onDone={props.onDone}
-    onCancel={props.onCancel}
-    imageUri={props.imageUri}
-    imageWidth={props.imageWidth}
-    imageHeight={props.imageHeight}
-    TOP_VALUE={props.TOP_VALUE}
-    LEFT_VALUE={props.LEFT_VALUE}
-    BOTTOM_VALUE={props.BOTTOM_VALUE}
-    RIGHT_VALUE={props.RIGHT_VALUE}
-    initialRotation={props.initialRotation}
-    NOT_SELECTED_AREA_OPACITY={props.NOT_SELECTED_AREA_OPACITY}
-    BORDER_WIDTH={props.BORDER_WIDTH}
-  />
-)
+class App extends React.Component {
+  render() {
+    return (
+      <Cropper
+        footerComponent={this.props.footerComponent}
+        onDone={this.props.onDone}
+        onCancel={this.props.onCancel}
+        imageUri={this.props.imageUri}
+        imageWidth={this.props.imageWidth}
+        imageHeight={this.props.imageHeight}
+        TOP_VALUE={this.props.TOP_VALUE}
+        LEFT_VALUE={this.props.LEFT_VALUE}
+        BOTTOM_VALUE={this.props.BOTTOM_VALUE}
+        RIGHT_VALUE={this.props.RIGHT_VALUE}
+        initialRotation={this.props.initialRotation}
+        NOT_SELECTED_AREA_OPACITY={this.props.NOT_SELECTED_AREA_OPACITY}
+        BORDER_WIDTH={this.props.BORDER_WIDTH}
+      />
+    )
+  }
+
+  onDone = () =>{
+    this.props.onDone()
+  }
+}
 
 
 App.propTypes = {

@@ -17,10 +17,10 @@ export default StyleSheet.create({
     height: SCREEN_HEIGHT,
   },
   footerContainer: {
-    position: 'absolute', 
-    top: SCREEN_HEIGHT - Q, 
-    bottom: 0, 
-    width: W
+    position: 'absolute',
+    top: 0,
+    width: W,
+    zIndex: 100
   },
   gridRow: {
     flex: 1,
@@ -93,8 +93,8 @@ export default StyleSheet.create({
     height: 30,
     borderColor: 'white'
   },
-  
-  
+
+
   icon: {
     paddingRight: 10,
     flexDirection: 'row',
